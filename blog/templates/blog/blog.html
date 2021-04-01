@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,25 +61,23 @@
   </head>
   <body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e2a2a">
+     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e2a2a">
       <div class="container-fluid" >
-        <a class="navbar-brand" href="#" >Barserka</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Barserka</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
+              <a class="nav-link" href="{% url 'showblog' %}">Blog</a>
             <li class="nav-item">
               <a class="nav-link" href="#" >Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About me</a>
+              <a class="nav-link" href="{% static 'info.txt' %}" tabindex="-1" aria-disabled="true">About me</a>
             </li>
           </div>
         </div>
@@ -103,7 +102,7 @@
 
           {% for blog in blogs.all %}
           <div class="card shadow-sm">
-              <a href="post_id"><h1 class="text-center">{{ blog.post_title }}</h1></a>
+              <a href="{% url 'specific_post' blog.id %}"><h1 class="text-center">{{ blog.post_title }}</h1></a>
             <img class="img-fluid" src="{{ blog.post_image.url }}"/>
             <div class="card-body">
               <p class="card-text">{{ blog.get_summary }}</p>
