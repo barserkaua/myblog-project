@@ -60,23 +60,25 @@
   <body>
 
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e2a2a">
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: silver">
       <div class="container-fluid" >
-        <a class="navbar-brand" href="{% url 'home' %}">Barserka</a>
+        <a class="navbar-brand mb-0 h1" href="{% url 'home' %}">
+          <img src="{% static 'logoB.jpg' %}" class="d-inline-block align-center" width="40" height="40">
+          Barserka</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
+              <a class="nav-link h5" href="{% url 'home' %}">Home</a>
             </li>
-              <a class="nav-link" href="{% url 'showblog' %}">Blog</a>
+              <a class="nav-link h5" href="{% url 'showblog' %}">Blog</a>
             <li class="nav-item">
-              <a class="nav-link" href="#" >Contact</a>
+              <a class="nav-link h5" href="{% url 'contacts' %}" >Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% static 'info.txt' %}" tabindex="-1" aria-disabled="true">About me</a>
+              <a class="nav-link h5" href="{% static 'Vasyl_Perehinets_JuniorPython.pdf' %}" download tabindex="-1" aria-disabled="true">About me</a>
             </li>
           </div>
         </div>
@@ -87,13 +89,13 @@
 <main role="main">
 
   <section class="text-center container" style="margin-top: 10px">
-    <div class="row py-lg-5">
+    <div class="row py-lg-4">
       <div class="col-lg-6 col-md-8 mx-auto">
         <p class="lead text-muted"><h3>If you have any questions, pls mail me. <br> Thank you</h3></p>
         <p>
           <a href="mailto:barserkaua@gmail.com" class="btn btn-primary my-2">Mail me</a>
         </p>
-        <img src="{% static 'P61225-121849.jpg' %}" class="img-fluid" width="300" height="300">
+        <img src="{% static 'P61225-121849.jpg' %}" class="img-fluid" width="250" height="250">
       </div>
     </div>
   </section>
@@ -145,8 +147,8 @@
     }
     </script>
     </p>
-    <p class="mb-1">Всі права захищенні мною, Перегінцем Василем</p>
-    <p class="mb-0">Є питання, пиши, дзвони, не забувай. Можеш відвідати мій <a href="https://www.instagram.com/check__mate___/?hl=ru" target="_blank"> інстаграм</a>
+    <p class="align-bottom">Всі права захищенні мною, Перегінцем Василем</p>
+    <p class="align-bottom">Є питання, пиши, дзвони, не забувай. Можеш відвідати мій <a href="https://www.instagram.com/check__mate___/?hl=ru" target="_blank"> інстаграм</a>
       або мій
       <a href="https://www.facebook.com/barserka/" target="_blank"> Фейсбук</a>.</p>
   </div>
